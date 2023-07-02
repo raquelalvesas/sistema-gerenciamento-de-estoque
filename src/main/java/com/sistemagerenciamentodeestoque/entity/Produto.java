@@ -28,5 +28,4 @@ public class Produto extends Auditavel {
     private String status;
     @Column(name = "data_vencimento")
     private Date dataVencimento;
-
 }

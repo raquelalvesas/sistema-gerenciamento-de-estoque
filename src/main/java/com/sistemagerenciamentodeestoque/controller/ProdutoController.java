@@ -4,6 +4,7 @@ import com.sistemagerenciamentodeestoque.entity.Produto;
 import com.sistemagerenciamentodeestoque.exceptions.InfoException;
 import com.sistemagerenciamentodeestoque.service.ProdutoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/produto")
 @RequiredArgsConstructor
-//@Tag(name = "Produto", description = "API de Produto")
+@Tag(name = "Produto", description = "API de Produto")
 public class ProdutoController {
-
     @Autowired
     private ProdutoService produtoService;
 
@@ -40,7 +40,6 @@ public class ProdutoController {
     public Produto alterar(@PathVariable("id") Long id, @RequestBody Produto produto) throws InfoException {
         return produtoService.alterar(id, produto);
     }
-
     @DeleteMapping("/deletar/{id}")
     @CrossOrigin("http://localhost:3000")
     @Operation(summary = "Deletar Produto", description = "Deleta um Produto em específico")
