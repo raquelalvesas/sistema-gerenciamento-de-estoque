@@ -1,9 +1,11 @@
 package com.sistemagerenciamentodeestoque.entity;
 
+import com.sistemagerenciamentodeestoque.enums.StatusProduto;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "produto")
@@ -16,12 +18,14 @@ public class Produto extends Auditavel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @Column(name = "codigo_barra")
+    private Long codigoBarra;
+    @Column(name = "lote")
+    private Long lote;
     @Column(name = "descricao")
     private String descricao;
     @Column(name = "valor_unitario")
     private Double valorUnitario;
-    @Column(name = "peso_unitario")
-    private String pesoUnitario;
     @Column(name = "quantidade_estoque")
     private Long quantidadeEstoque;
     @Column(name = "status")

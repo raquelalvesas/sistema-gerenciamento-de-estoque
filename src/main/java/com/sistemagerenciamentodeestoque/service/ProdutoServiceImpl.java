@@ -34,9 +34,10 @@ public class ProdutoServiceImpl implements ProdutoService {
         if (optionalProduto.isPresent()) {
             Produto produtoBuilder = Produto.builder()
                     .id(id)
+                    .codigoBarra(produto.getCodigoBarra() != null ? produto.getCodigoBarra() : null)
+                    .lote(produto.getLote() != null ? produto.getLote() : null)
                     .descricao(produto.getDescricao() != null ? produto.getDescricao() : null)
                     .valorUnitario(produto.getValorUnitario() != null ? produto.getValorUnitario() : null)
-                    .pesoUnitario(produto.getPesoUnitario() != null ? produto.getPesoUnitario() : null)
                     .quantidadeEstoque(produto.getQuantidadeEstoque() != null ? produto.getQuantidadeEstoque() : null)
                     .status(produto.getStatus() != null ? produto.getStatus() : null)
                     .dataVencimento(produto.getDataVencimento() != null ? produto.getDataVencimento() : null)

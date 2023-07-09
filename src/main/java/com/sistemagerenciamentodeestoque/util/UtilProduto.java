@@ -7,14 +7,17 @@ import org.springframework.http.HttpStatus;
 
 public class UtilProduto {
     public static Boolean validarProduto(Produto produto) throws InfoException {
+        if (produto.getCodigoBarra() == null || produto.getCodigoBarra().equals("")) {
+            throw new InfoException("MESSAGE.CODIGO_BARRA_REQUIRED", HttpStatus.BAD_REQUEST);
+        }
+        if (produto.getLote() == null || produto.getLote().equals("")) {
+            throw new InfoException("MESSAGE.LOTE_REQUIRED", HttpStatus.BAD_REQUEST);
+        }
         if (produto.getDescricao() == null || produto.getDescricao().equals("")) {
             throw new InfoException("MESSAGE.DESCRICAO_REQUIRED", HttpStatus.BAD_REQUEST);
         }
         if (produto.getValorUnitario() == null) {
             throw new InfoException("MESSAGE.VALOR_UNITARIO_REQUIRED", HttpStatus.BAD_REQUEST);
-        }
-        if (produto.getPesoUnitario() == null) {
-            throw new InfoException("MESSAGE.PESO_UNITARIO_REQUIRED", HttpStatus.BAD_REQUEST);
         }
         if (produto.getQuantidadeEstoque() == null) {
             throw new InfoException("MESSAGE.QUANTIDADE_ESTOQUE_REQUIRED", HttpStatus.BAD_REQUEST);
@@ -29,13 +32,12 @@ public class UtilProduto {
     }
     public static ProdutoDTO converterProduto(Produto produto) {
         return ProdutoDTO.builder()
+                .codigoBarra(produto.getCodigoBarra())
+                .lote(produto.getLote())
                 .descricao(produto.getDescricao())
                 .valorUnitario(produto.getValorUnitario())
-                .pesoUnitario(produto.getPesoUnitario())
                 .status(produto.getStatus())
                 .dataVencimento(produto.getDataVencimento())
                 .build();
     }
-
-
 }

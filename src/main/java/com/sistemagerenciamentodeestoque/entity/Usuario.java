@@ -1,5 +1,6 @@
 package com.sistemagerenciamentodeestoque.entity;
 
+import com.sistemagerenciamentodeestoque.enums.TipoUsuario;
 import jakarta.persistence.*;
 import lombok.*;
 
