@@ -18,4 +18,5 @@ public class VendaDTO {
     private UsuarioDTO usuario;
     private ClienteDTO cliente;
     private List<ItensVendaDTO> itensVenda;
+
 }
