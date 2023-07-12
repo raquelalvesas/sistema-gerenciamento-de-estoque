@@ -39,7 +39,7 @@ public class ProdutoServiceImpl implements ProdutoService {
                     .descricao(produto.getDescricao() != null ? produto.getDescricao() : null)
                     .valorUnitario(produto.getValorUnitario() != null ? produto.getValorUnitario() : null)
                     .quantidadeEstoque(produto.getQuantidadeEstoque() != null ? produto.getQuantidadeEstoque() : null)
-                    .status(produto.getStatus() != null ? produto.getStatus() : null)
+                    .statusProduto(produto.getStatusProduto() != null ? produto.getStatusProduto() : null)
                     .dataVencimento(produto.getDataVencimento() != null ? produto.getDataVencimento() : null)
                     .build();
 
