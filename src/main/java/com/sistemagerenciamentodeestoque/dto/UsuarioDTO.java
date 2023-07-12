@@ -14,14 +14,14 @@ public class UsuarioDTO extends Auditavel {
     private Long id;
     private String nome;
     private Date dataNascimento;
-    private String endereco;
-    private String cep;
-    private String cidade;
-    private String estado;
-    private List<PermissaoUsuario> permissaoUsuarios;
+    private String cpf;
     private String email;
     private String senha;
     private String codigoRecuperacaoSenha;
+    private String endereco;
+    private String cidade;
+    private String estado;
+    private String cep;
+    private List<PermissaoUsuario> permissaoUsuarios;
     private Date dataEnvioCodigo;
-
 }

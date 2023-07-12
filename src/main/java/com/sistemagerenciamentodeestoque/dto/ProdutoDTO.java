@@ -1,6 +1,9 @@
 package com.sistemagerenciamentodeestoque.dto;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,11 +18,11 @@ import java.util.List;
 @Builder
 public class ProdutoDTO {
     private Long id;
+    private String descricao;
     private Long codigoBarra;
     private Long lote;
-    private String descricao;
-    private Double valorUnitario;
     private Long quantidadeEstoque;
-    private String status;
+    private Double valorUnitario;
     private Date dataVencimento;
+    private String statusProduto;
 }

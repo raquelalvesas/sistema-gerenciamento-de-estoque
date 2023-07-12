@@ -22,7 +22,7 @@ public class UtilProduto {
         if (produto.getQuantidadeEstoque() == null) {
             throw new InfoException("MESSAGE.QUANTIDADE_ESTOQUE_REQUIRED", HttpStatus.BAD_REQUEST);
         }
-        if (produto.getStatus() == null) {
+        if (produto.getStatusProduto() == null) {
             throw new InfoException("MESSAGE.STATUS_REQUIRED", HttpStatus.BAD_REQUEST);
         }
         if (produto.getDataVencimento() == null) {
@@ -36,7 +36,7 @@ public class UtilProduto {
                 .lote(produto.getLote())
                 .descricao(produto.getDescricao())
                 .valorUnitario(produto.getValorUnitario())
-                .status(produto.getStatus())
+                .statusProduto(produto.getStatusProduto())
                 .dataVencimento(produto.getDataVencimento())
                 .build();
     }

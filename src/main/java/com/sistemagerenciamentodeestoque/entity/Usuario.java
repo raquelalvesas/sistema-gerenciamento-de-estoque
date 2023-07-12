@@ -1,6 +1,5 @@
 package com.sistemagerenciamentodeestoque.entity;
 
-import com.sistemagerenciamentodeestoque.enums.TipoUsuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,8 +19,10 @@ public class Usuario extends Auditavel {
     private Long id;
     @Column(name = "nome")
     private String nome;
-    @Column(name = "documento")
+    @Column(name = "data_nascimento")
     private Date dataNascimento;
+    @Column(name = "cpf")
+    private String cpf;
     @Column(name = "email")
     private String email;
     @Column(name = "senha")
@@ -42,5 +43,4 @@ public class Usuario extends Auditavel {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_envio_codigo")
     private Date dataEnvioCodigo;
-
 }
